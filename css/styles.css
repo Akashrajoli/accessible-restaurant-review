@@ -1,0 +1,71 @@
+/* Main styles */
+body {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.rating-stars {
+    font-size: 1.5rem;
+    color: #ddd;
+    display: inline-block;
+}
+
+.rating-stars .star {
+    display: inline-block;
+}
+
+.rating-stars .filled {
+    color: #ffc107;
+}
+
+.rating-stars .half {
+    position: relative;
+    display: inline-block;
+    color: #ffc107;
+}
+
+.rating-stars .half::after {
+    content: '★';
+    position: absolute;
+    left: 0;
+    width: 50%;
+    overflow: hidden;
+    color: #ddd;
+}
+
+/* Rating input styles */
+.rating-input {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.rating-input .star-label {
+    font-size: 2rem;
+    color: #ddd;
+    cursor: pointer;
+}
+
+.rating-input input:checked ~ .star-label,
+.rating-input input:focus ~ .star-label,
+.rating-input .star-label:hover {
+    color: #ffc107;
+}
+
+/* Accessibility controls */
+.accessibility-controls {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 1000;
+}
+
+/* Restaurant cards */
+.restaurant-card {
+    transition: transform 0.3s ease;
+}
+
+.restaurant-card:hover {
+    transform: translateY(-5px);
+}
+
+/* High contrast mode styles are in accessibility.css */

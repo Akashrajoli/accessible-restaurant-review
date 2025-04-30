@@ -1,0 +1,87 @@
+/* Accessibility-specific styles */
+:root {
+    --text-size: 1rem;
+    --primary-color: #0d6efd;
+    --secondary-color: #6c757d;
+    --background-color: #ffffff;
+    --text-color: #212529;
+}
+
+/* High contrast mode */
+.high-contrast {
+    --primary-color: #0000ff;
+    --secondary-color: #767676;
+    --background-color: #ffffff;
+    --text-color: #000000;
+    --link-color: #0000ff;
+    
+    background-color: var(--background-color) !important;
+    color: var(--text-color) !important;
+}
+
+.high-contrast a {
+    color: var(--link-color) !important;
+    text-decoration: underline !important;
+}
+
+.high-contrast .btn-primary {
+    background-color: var(--primary-color) !important;
+    color: #ffffff !important;
+    border: 2px solid #000000 !important;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Focus styles */
+:focus-visible {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* Text size adjustments */
+.large-text {
+    font-size: calc(var(--text-size) * 1.25);
+}
+
+.xlarge-text {
+    font-size: calc(var(--text-size) * 1.5);
+}
+
+/* Skip link */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--primary-color);
+    color: white;
+    padding: 8px;
+    z-index: 100;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* Accessible form controls */
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+.invalid-feedback {
+    display: none;
+    color: #dc3545;
+}
+
+.was-validated .form-control:invalid ~ .invalid-feedback,
+.was-validated .form-control:invalid ~ .invalid-tooltip {
+    display: block;
+}
