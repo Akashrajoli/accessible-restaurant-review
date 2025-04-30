@@ -85,3 +85,55 @@
 .was-validated .form-control:invalid ~ .invalid-tooltip {
     display: block;
 }
+/* Voice recording interface */
+#audio-controls {
+    display: none;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.record-icon {
+    font-size: 1.2em;
+    vertical-align: middle;
+}
+
+/* Audio playback button */
+.play-audio {
+    transition: all 0.2s ease;
+}
+
+.play-audio:hover {
+    transform: scale(1.05);
+}
+
+/* Accessibility live region */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Rating stars */
+.rating-input {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.star-label {
+    font-size: 2rem;
+    color: #ddd;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.star-label:hover,
+.rating-input input:checked ~ .star-label {
+    color: #ffc107;
+    transform: scale(1.1);
+}
